@@ -44,7 +44,7 @@ namespace CatalogOfMemes
             }
         }
 
-        public void SaveJoke(TextBox tbName, TextBox tbURL, ComboBox cb_category)
+        public void SaveJokeURL(TextBox tbName, TextBox tbURL, ComboBox cb_category)
         {
             LoadJokes();
             var joke = new Joke
@@ -52,17 +52,22 @@ namespace CatalogOfMemes
                 Name = tbName.Text,
                 Type = cb_category.Text,
             };
-            if(tbURL != null)
+            joke.ImageLocation = tbURL.Text;
+            jokes.Add(joke);
+            SaveJokes();
+        }
+        public void SaveJokePC(TextBox tbName, TextBox tbURL, ComboBox cb_category)
+        {
+            LoadJokes();
+            var joke = new Joke
             {
-                joke.ImageLocation = tbURL.Text;
-            }
-            else
+                Name = tbName.Text,
+                Type = cb_category.Text,
+            };
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
             {
-                var openFileDialog = new OpenFileDialog();
-                if (openFileDialog.ShowDialog() == true)
-                {
-                    joke.ImageLocation = openFileDialog.FileName;
-                }
+                joke.ImageLocation = openFileDialog.FileName;
             }
             jokes.Add(joke);
             SaveJokes();

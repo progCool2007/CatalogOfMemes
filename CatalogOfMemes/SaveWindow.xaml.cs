@@ -28,7 +28,12 @@ namespace CatalogOfMemes
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            catalogFunctions.SaveJoke(tbName, tbURL, cb_category);
+            catalogFunctions.SaveJokeURL(tbName, tbURL, cb_category);
+        }
+
+        private void Button_SavePC_Click(object sender, RoutedEventArgs e)
+        {
+            catalogFunctions.SaveJokePC(tbName, tbURL, cb_category);
         }
     }
 }

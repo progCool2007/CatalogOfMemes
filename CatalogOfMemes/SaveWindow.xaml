@@ -18,7 +18,8 @@
             <ComboBoxItem Content="Анекдоты"/>
         </ComboBox>
         <Label Content="URL адресс(не обязательно)" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button_Save" Content="Save" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Height="46" Width="390" Click="Button_Save_Click"/>
+        <Button x:Name="Button_Save" Content="Save From URL" HorizontalAlignment="Left" Margin="224,299,0,0" VerticalAlignment="Top" Height="46" Width="164" Click="Button_Save_Click"/>
+        <Button x:Name="Button_Save_Copy" Content="Save From PC" HorizontalAlignment="Left" Margin="412,299,0,0" VerticalAlignment="Top" Height="46" Width="164" Click="Button_SavePC_Click"/>
 
     </Grid>
 </Window>
